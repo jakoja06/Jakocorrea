@@ -1,8 +1,8 @@
-# 1. SITE CONFIGURATION (CRITICAL FIXES HERE)
+# 1. SITE CONFIGURATION (CRITICAL FIXES FOR YOUR REPO)
 title: "Your Name"
 name: "Your Name"
 description: "Engineer Portfolio | Data Engineer | Software Developer"
-# The URL is the base domain name (username.github.io)
+# Base domain name (username.github.io)
 url: "https://jakoja06.github.io"
 # The baseurl MUST be the name of your repository, preceded by a slash.
 baseurl: "/Jakocorrea" 
@@ -47,6 +47,9 @@ defaults:
       comments: false
       share: true
       related: true
+      # This ensures posts have a thumbnail for the Portfolio gallery view
+      header:
+        teaser: /assets/images/default-project-teaser.jpg
   # Pages (Index, Portfolio, etc.)
   - scope:
       path: ""
