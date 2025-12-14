@@ -1,0 +1,41 @@
+title: "Your Name"
+name: "Your Name"
+description: "Data Engineer | Software Developer | Problem Solver"
+url: "https://yourusername.github.io" # Replace with your URL
+baseurl: "" # Keep empty for root domain
+repository: "yourusername/yourusername.github.io"
+
+# THEME SETTINGS
+remote_theme: mmistakes/minimal-mistakes
+minimal_mistakes_skin: "air" # Options: air, default, dark, sunrise, contrast
+
+# PLUGINS
+plugins:
+  - jekyll-include-cache
+
+# AUTHOR PROFILE (The sidebar bio)
+author:
+  name: "Your Name"
+  avatar: "/assets/images/profile.jpg" # Add your photo to this path later
+  bio: "I build robust systems and scalable applications."
+  location: "San Francisco, CA"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/yourusername"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://linkedin.com/in/yourusername"
+
+# GLOBAL DEFAULTS
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "single"
+      author_profile: true
+      read_time: true
+      comments: false
+      share: true
+      related: true
