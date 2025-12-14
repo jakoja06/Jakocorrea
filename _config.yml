@@ -9,12 +9,12 @@ baseurl: "/Jakocorrea"
 repository: "jakoja06/Jakocorrea"
 teaser: null
 
-# 2. THEME SETTINGS (USING GEM INSTEAD OF REMOTE THEME)
-# --- IMPORTANT CHANGE HERE ---
-theme: "minimal-mistakes-jekyll" 
+# 2. THEME SETTINGS (USING REMOTE THEME AGAIN)
+# --- IMPORTANT REVERSION HERE ---
+remote_theme: "mmistakes/minimal-mistakes" 
 minimal_mistakes_skin: "air" # Options: default, dark, sunrise, contrast
 
-# 3. PLUGINS
+# 3. PLUGINS (Removed jekyll-remote-theme which is redundant with remote_theme setting)
 plugins:
   - jekyll-feed
   - jekyll-include-cache
