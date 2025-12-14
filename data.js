@@ -1,11 +1,11 @@
 export const SITE_CONFIG = {
-  name: "Alex Engineer",
-  title: "Senior Mechanical Engineer",
+  name: "Jacobo Correa",
+  title: "Mechanical Engineer Student",
   description: "Specializing in robotics, FEA analysis, and precision mechanism design. Transforming complex problems into elegant mechanical solutions.",
   social: {
     github: "https://github.com",
     linkedin: "https://linkedin.com",
-    email: "mailto:alex@example.com"
+    email: "mailto: jakocorrea@icloud.com"
   }
 };
 
@@ -36,13 +36,17 @@ export const PROJECTS = [
       "Material": "AL 7075-T6"
     },
     assets: {
+      // INSTRUCTIONS:
+      // 1. Create a folder named 'assets' in your root directory.
+      // 2. Put your files there (e.g., assets/blueprints/drawing.pdf).
+      // 3. Update the 'url' below to point to that file.
       blueprints: [
-        { title: "Arm Assembly View", url: "#", type: "PDF", size: "2.4 MB" },
-        { title: "Joint 3 Detail", url: "#", type: "PDF", size: "1.1 MB" }
+        { title: "Arm Assembly View", url: "./assets/blueprints/assembly_view.pdf", type: "PDF", size: "2.4 MB" },
+        { title: "Joint 3 Detail", url: "./assets/blueprints/joint_3.pdf", type: "PDF", size: "1.1 MB" }
       ],
       cad: [
-        { title: "Full Assembly STEP", url: "#", type: "STEP", size: "45 MB" },
-        { title: "Gripper End-Effector", url: "#", type: "STL", size: "5 MB" }
+        { title: "Full Assembly STEP", url: "./assets/cad/arm_assembly.step", type: "STEP", size: "45 MB" },
+        { title: "Gripper End-Effector", url: "./assets/cad/gripper.stl", type: "STL", size: "5 MB" }
       ],
       code: [
         {
@@ -95,7 +99,7 @@ def inverse_kinematics(target_pose, link_lengths):
     },
     assets: {
        cad: [
-        { title: "Optimized Frame", url: "#", type: "IGES", size: "12 MB" }
+        { title: "Optimized Frame", url: "./assets/cad/drone_frame_v2.iges", type: "IGES", size: "12 MB" }
       ]
     }
   },
@@ -122,8 +126,8 @@ def inverse_kinematics(target_pose, link_lengths):
     },
     assets: {
       blueprints: [
-         { title: "Gearbox Cross Section", url: "#", type: "PDF", size: "3.2 MB" },
-         { title: "BOM List", url: "#", type: "PDF", size: "0.5 MB" }
+         { title: "Gearbox Cross Section", url: "./assets/blueprints/gearbox_section.pdf", type: "PDF", size: "3.2 MB" },
+         { title: "BOM List", url: "./assets/blueprints/gearbox_BOM.pdf", type: "PDF", size: "0.5 MB" }
       ]
     }
   },
