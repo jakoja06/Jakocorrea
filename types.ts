@@ -20,16 +20,3 @@ export interface Project {
     demo?: string;
   };
 }
-
-export interface ChatMessage {
-  role: 'user' | 'model';
-  text: string;
-  isThinking?: boolean;
-}
-
-export enum Section {
-  HOME = 'home',
-  PROJECTS = 'projects',
-  ABOUT = 'about',
-  RESUME = 'resume',
-}
