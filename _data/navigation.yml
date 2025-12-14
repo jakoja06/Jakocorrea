@@ -1,7 +1,10 @@
+# main links
 main:
+  - title: "Home"
+    url: /
   - title: "About"
-    url: "/"
+    url: /about/
   - title: "Portfolio"
-    url: "/portfolio/"
+    url: /portfolio/ # Matches the permalink in _pages/portfolio.md
   - title: "Resume"
-    url: "/assets/documents/resume.pdf" # Upload your PDF later
+    url: /resume/
