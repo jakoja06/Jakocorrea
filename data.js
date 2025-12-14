@@ -16,7 +16,11 @@ export const PROJECTS = [
     subtitle: "High-precision manipulator for assembly tasks",
     description: "Designed and prototyped a 6-degree-of-freedom robotic arm capable of 0.5mm repeatability. Utilized harmonic drives for compact joint actuation.",
     thumbnail: "https://picsum.photos/id/1/800/600",
-    images: ["https://picsum.photos/id/1/800/600", "https://picsum.photos/id/2/800/600"],
+    images: [
+      "https://picsum.photos/id/1/800/600",
+      "https://picsum.photos/id/532/800/600",
+      "https://picsum.photos/id/2/800/600"
+    ],
     tags: ["SolidWorks", "Robotics", "Kinematics", "Python"],
     date: "2023-11",
     role: "Lead Mechanical Engineer",
@@ -30,6 +34,42 @@ export const PROJECTS = [
       "Reach": "850 mm",
       "Weight": "12 kg",
       "Material": "AL 7075-T6"
+    },
+    assets: {
+      blueprints: [
+        { title: "Arm Assembly View", url: "#", type: "PDF", size: "2.4 MB" },
+        { title: "Joint 3 Detail", url: "#", type: "PDF", size: "1.1 MB" }
+      ],
+      cad: [
+        { title: "Full Assembly STEP", url: "#", type: "STEP", size: "45 MB" },
+        { title: "Gripper End-Effector", url: "#", type: "STL", size: "5 MB" }
+      ],
+      code: [
+        {
+          language: "python",
+          filename: "kinematics_solver.py",
+          description: "Inverse kinematics solver for 6-DOF positioning.",
+          snippet: `import numpy as np
+
+def inverse_kinematics(target_pose, link_lengths):
+    """
+    Calculates joint angles for a 6-DOF arm.
+    Args:
+        target_pose: 4x4 homogenous transformation matrix
+        link_lengths: list of link lengths [l1, l2, l3...]
+    Returns:
+        theta: list of joint angles [th1, th2, th3, th4, th5, th6]
+    """
+    x, y, z = target_pose[:3, 3]
+    
+    # Calculate Base Rotation (Theta 1)
+    theta1 = np.arctan2(y, x)
+    
+    # ... geometrical calculations ...
+    
+    return [theta1, theta2, theta3, theta4, theta5, theta6]`
+        }
+      ]
     }
   },
   {
@@ -52,6 +92,11 @@ export const PROJECTS = [
       "Material": "Carbon Fiber Nylon",
       "Max Load": "250N",
       "Mfg Process": "SLS Printing"
+    },
+    assets: {
+       cad: [
+        { title: "Optimized Frame", url: "#", type: "IGES", size: "12 MB" }
+      ]
     }
   },
   {
@@ -74,6 +119,12 @@ export const PROJECTS = [
       "Max Torque": "150 Nm",
       "Efficiency": "96%",
       "Input Speed": "4000 RPM"
+    },
+    assets: {
+      blueprints: [
+         { title: "Gearbox Cross Section", url: "#", type: "PDF", size: "3.2 MB" },
+         { title: "BOM List", url: "#", type: "PDF", size: "0.5 MB" }
+      ]
     }
   },
   {
@@ -90,6 +141,22 @@ export const PROJECTS = [
       challenge: "Existing systems were too rigid and required days to reconfigure for different package sizes.",
       solution: "Designed a modular aluminum profile system with quick-release pneumatic guides.",
       result: "Changeover time reduced from 8 hours to 45 minutes."
+    },
+    assets: {
+      code: [
+         {
+          language: "cpp",
+          filename: "plc_logic.cpp",
+          description: "Main loop for sorting logic.",
+          snippet: `void loop() {
+  if (sensorA.read() == HIGH) {
+    actuatorPush.extend();
+    delay(500);
+    actuatorPush.retract();
+  }
+}`
+         }
+      ]
     }
   }
 ];

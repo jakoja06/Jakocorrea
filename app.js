@@ -10,10 +10,13 @@ const navLinks = document.querySelectorAll('.nav-link');
 // State
 let currentRoute = '';
 
-// Icons
+// Icons (Feather Icons)
 const Icons = {
     arrowRight: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>`,
-    download: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>`
+    download: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>`,
+    file: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>`,
+    box: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/><line x1="3.27 16.96" x2="12.01" y2="12.01"/><line x1="20.73 16.96" x2="12.01" y2="12.01"/></svg>`,
+    code: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`
 };
 
 // Router
@@ -141,6 +144,94 @@ function renderProjectDetail(id) {
         return;
     }
 
+    // Prepare Assets HTML if they exist
+    const hasBlueprints = project.assets?.blueprints?.length > 0;
+    const hasCad = project.assets?.cad?.length > 0;
+    const hasCode = project.assets?.code?.length > 0;
+    
+    // Render Blueprints Section
+    const blueprintsHTML = hasBlueprints ? `
+        <div class="mb-12">
+            <h3 class="text-lg font-bold text-slate-100 mb-6 flex items-center">
+                <span class="p-2 bg-slate-800 rounded-lg mr-3 text-primary">${Icons.file}</span> Blueprints & Schematics
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                ${project.assets.blueprints.map(bp => `
+                    <a href="${bp.url}" class="group flex items-center p-4 bg-slate-900 border border-slate-800 rounded-lg hover:border-primary/50 hover:bg-slate-800 transition-all">
+                        <div class="flex-1 min-w-0">
+                            <p class="text-sm font-medium text-slate-200 truncate group-hover:text-primary transition-colors">${bp.title}</p>
+                            <p class="text-xs text-slate-500 mt-1">${bp.type} • ${bp.size}</p>
+                        </div>
+                        <div class="text-slate-500 group-hover:text-primary transition-colors">
+                            ${Icons.download}
+                        </div>
+                    </a>
+                `).join('')}
+            </div>
+        </div>
+    ` : '';
+
+    // Render CAD Section
+    const cadHTML = hasCad ? `
+        <div class="mb-12">
+            <h3 class="text-lg font-bold text-slate-100 mb-6 flex items-center">
+                <span class="p-2 bg-slate-800 rounded-lg mr-3 text-primary">${Icons.box}</span> CAD Models
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                ${project.assets.cad.map(item => `
+                    <a href="${item.url}" class="group flex items-center p-4 bg-slate-900 border border-slate-800 rounded-lg hover:border-primary/50 hover:bg-slate-800 transition-all">
+                        <div class="flex-1 min-w-0">
+                            <p class="text-sm font-medium text-slate-200 truncate group-hover:text-primary transition-colors">${item.title}</p>
+                            <p class="text-xs text-slate-500 mt-1">${item.type} • ${item.size}</p>
+                        </div>
+                        <div class="text-slate-500 group-hover:text-primary transition-colors">
+                            ${Icons.download}
+                        </div>
+                    </a>
+                `).join('')}
+            </div>
+        </div>
+    ` : '';
+
+    // Render Code Section
+    const codeHTML = hasCode ? `
+        <div class="mb-12">
+            <h3 class="text-lg font-bold text-slate-100 mb-6 flex items-center">
+                <span class="p-2 bg-slate-800 rounded-lg mr-3 text-primary">${Icons.code}</span> Engineering Logic
+            </h3>
+            <div class="space-y-6">
+                ${project.assets.code.map(c => `
+                    <div class="bg-[#1d1f21] rounded-lg overflow-hidden border border-slate-800 shadow-xl">
+                        <div class="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-800">
+                            <span class="text-xs font-mono text-slate-400">${c.filename}</span>
+                            <span class="text-[10px] text-slate-600 uppercase font-bold">${c.language}</span>
+                        </div>
+                        <div class="p-4 overflow-x-auto">
+                            <pre><code class="language-${c.language}">${c.snippet.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>
+                        </div>
+                        ${c.description ? `<div class="px-4 py-3 bg-slate-900/50 border-t border-slate-800 text-sm text-slate-500 italic">${c.description}</div>` : ''}
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    ` : '';
+
+    // Render Gallery Images (excluding the first one which is the hero)
+    const galleryImages = project.images.length > 1 ? project.images.slice(1) : [];
+    const galleryHTML = galleryImages.length > 0 ? `
+         <div class="mb-12">
+             <h3 class="text-lg font-bold text-slate-100 mb-6">Gallery</h3>
+             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                ${galleryImages.map(img => `
+                    <div class="aspect-video bg-slate-900 rounded-lg overflow-hidden border border-slate-800 group">
+                        <img src="${img}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Gallery image">
+                    </div>
+                `).join('')}
+             </div>
+         </div>
+    ` : '';
+
+
     contentArea.innerHTML = `
         <div class="fade-in max-w-4xl">
             <a href="#projects" class="inline-flex items-center text-slate-500 hover:text-primary mb-6 text-sm transition-colors group">
@@ -162,7 +253,7 @@ function renderProjectDetail(id) {
                 <img src="${project.images[0]}" alt="${project.title}" class="w-full h-full object-cover" />
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
                 <div class="lg:col-span-2 space-y-12">
                     <section>
                         <h3 class="text-lg font-bold text-slate-100 mb-4 flex items-center">
@@ -211,8 +302,20 @@ function renderProjectDetail(id) {
                     </div>
                 </div>
             </div>
+
+            <!-- Assets Section -->
+            ${blueprintsHTML}
+            ${cadHTML}
+            ${codeHTML}
+            ${galleryHTML}
+
         </div>
     `;
+    
+    // Trigger syntax highlighting
+    if (window.Prism) {
+        setTimeout(() => window.Prism.highlightAll(), 0);
+    }
 }
 
 // Helpers
