@@ -1,4 +1,4 @@
-# 1. SITE CONFIGURATION (CRITICAL FIXES FOR YOUR REPO)
+# 1. SITE CONFIGURATION 
 title: "Your Name"
 name: "Your Name"
 description: "Engineer Portfolio | Data Engineer | Software Developer"
@@ -9,12 +9,11 @@ baseurl: "/Jakocorrea"
 repository: "jakoja06/Jakocorrea"
 teaser: null
 
-# 2. THEME SETTINGS (USING REMOTE THEME AGAIN)
-# --- IMPORTANT REVERSION HERE ---
+# 2. THEME SETTINGS (Remote Theme is the standard for GitHub Pages)
 remote_theme: "mmistakes/minimal-mistakes" 
 minimal_mistakes_skin: "air" # Options: default, dark, sunrise, contrast
 
-# 3. PLUGINS (Removed jekyll-remote-theme which is redundant with remote_theme setting)
+# 3. PLUGINS (Required for a modern Jekyll/GitHub Pages site)
 plugins:
   - jekyll-feed
   - jekyll-include-cache
