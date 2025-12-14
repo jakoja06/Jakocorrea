@@ -1,10 +1,14 @@
 # main links
 main:
   - title: "Home"
+    # This will now correctly resolve to /Jakocorrea/
     url: /
   - title: "About"
+    # This link is relative and should use the baseurl prefix
     url: /about/
   - title: "Portfolio"
-    url: /portfolio/ # Matches the permalink in _pages/portfolio.md
+    # ***CRITICAL FIX: Use the full repository path in the URL***
+    url: /Jakocorrea/portfolio/ 
   - title: "Resume"
-    url: /resume/
+    # Ensure resume also uses the full path
+    url: /Jakocorrea/resume/
