@@ -9,21 +9,21 @@ baseurl: "/Jakocorrea"
 repository: "jakoja06/Jakocorrea"
 teaser: null
 
-# 2. THEME SETTINGS
-remote_theme: "mmistakes/minimal-mistakes"
+# 2. THEME SETTINGS (USING GEM INSTEAD OF REMOTE THEME)
+# --- IMPORTANT CHANGE HERE ---
+theme: "minimal-mistakes-jekyll" 
 minimal_mistakes_skin: "air" # Options: default, dark, sunrise, contrast
 
 # 3. PLUGINS
 plugins:
   - jekyll-feed
   - jekyll-include-cache
-  - jekyll-remote-theme
   - jekyll-sitemap
 
 # 4. AUTHOR PROFILE (Sidebar Content)
 author:
   name: "Your Name"
-  avatar: "/assets/images/profile.jpg" # Place your profile image here later
+  avatar: "/assets/images/profile.jpg"
   bio: "I build robust systems and scalable applications."
   location: "San Francisco, CA"
   links:
@@ -34,7 +34,7 @@ author:
       icon: "fab fa-fw fa-linkedin"
       url: "https://linkedin.com/in/yourusername"
 
-# 5. GLOBAL DEFAULTS (How pages and posts are rendered)
+# 5. GLOBAL DEFAULTS (Ensuring Posts show up in the Gallery)
 defaults:
   # Posts (Your projects)
   - scope:
@@ -47,7 +47,6 @@ defaults:
       comments: false
       share: true
       related: true
-      # This ensures posts have a thumbnail for the Portfolio gallery view
       header:
         teaser: /assets/images/default-project-teaser.jpg
   # Pages (Index, Portfolio, etc.)
