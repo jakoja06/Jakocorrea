@@ -1,34 +1,42 @@
+# 1. SITE CONFIGURATION (CRITICAL FIXES HERE)
 title: "Your Name"
 name: "Your Name"
-description: "Data Engineer | Software Developer | Problem Solver"
-url: "https://yourusername.github.io" # Replace with your URL
-baseurl: "" # Keep empty for root domain
-repository: "yourusername/yourusername.github.io"
+description: "Engineer Portfolio | Data Engineer | Software Developer"
+# The URL is the base domain name (username.github.io)
+url: "https://jakoja06.github.io"
+# The baseurl MUST be the name of your repository, preceded by a slash.
+baseurl: "/Jakocorrea" 
+repository: "jakoja06/Jakocorrea"
+teaser: null
 
-# THEME SETTINGS
-remote_theme: mmistakes/minimal-mistakes
-minimal_mistakes_skin: "air" # Options: air, default, dark, sunrise, contrast
+# 2. THEME SETTINGS
+remote_theme: "mmistakes/minimal-mistakes"
+minimal_mistakes_skin: "air" # Options: default, dark, sunrise, contrast
 
-# PLUGINS
+# 3. PLUGINS
 plugins:
+  - jekyll-feed
   - jekyll-include-cache
+  - jekyll-remote-theme
+  - jekyll-sitemap
 
-# AUTHOR PROFILE (The sidebar bio)
+# 4. AUTHOR PROFILE (Sidebar Content)
 author:
   name: "Your Name"
-  avatar: "/assets/images/profile.jpg" # Add your photo to this path later
+  avatar: "/assets/images/profile.jpg" # Place your profile image here later
   bio: "I build robust systems and scalable applications."
   location: "San Francisco, CA"
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/yourusername"
+      url: "https://github.com/jakoja06/Jakocorrea"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://linkedin.com/in/yourusername"
 
-# GLOBAL DEFAULTS
+# 5. GLOBAL DEFAULTS (How pages and posts are rendered)
 defaults:
+  # Posts (Your projects)
   - scope:
       path: ""
       type: "posts"
@@ -39,3 +47,14 @@ defaults:
       comments: false
       share: true
       related: true
+  # Pages (Index, Portfolio, etc.)
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "single"
+      author_profile: true
+
+# 6. MARKDOWN & ASSETS
+markdown: kramdown
+highlighter: rouge
