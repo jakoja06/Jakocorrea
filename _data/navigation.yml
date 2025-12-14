@@ -1,14 +1,10 @@
 # main links
 main:
   - title: "Home"
-    # This will now correctly resolve to /Jakocorrea/
     url: /
   - title: "About"
-    # This link is relative and should use the baseurl prefix
     url: /about/
   - title: "Portfolio"
-    # ***CRITICAL FIX: Use the full repository path in the URL***
-    url: /Jakocorrea/portfolio/ 
+    url: /portfolio/ # Simple link without the repo name
   - title: "Resume"
-    # Ensure resume also uses the full path
-    url: /Jakocorrea/resume/
+    url: /resume/
