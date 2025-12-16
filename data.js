@@ -1,7 +1,7 @@
 export const SITE_CONFIG = {
-  name: "Jacobo Correa",
+  name: "Jacobo Correa ",
   title: "Mechanical Engineer Student",
-  description: "Specializing in robotics, FEA analysis, and precision mechanism design. Transforming complex problems into elegant mechanical solutions.",
+  description: "Specializing in robotics, FEAh analysis, and precision mechanism design. Transforming complex problems into elegant mechanical solutions.",
   social: {
     github: "https://github.com",
     linkedin: "https://linkedin.com",
