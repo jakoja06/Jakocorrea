@@ -82,7 +82,7 @@ export const PROJECTS = [
     title: "HeeWing T1 Ranger VTOL",
     subtitle: "Custom VTOL RC Aircraft with FPV",
     description: "Transformation of a commercial airframe into a high-performance FPV and autonomous platform, integrating vertical takeoff capabilities with efficient fixed-wing flight.",
-    thumbnail: "./assets/images/thumbnails/heewing_thumb.jpg",
+    thumbnail: "./assets/images/thumbnails/heewing_thumb.jpeg",
     images: [
       "./assets/images/thumbnails/heewing_thumb.jpg", 
       "./assets/images/heewing_flight.jpg"
