@@ -1,1 +1,0 @@
-// This file is no longer used as we have switched to in-browser compilation.
