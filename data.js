@@ -11,159 +11,141 @@ export const SITE_CONFIG = {
 
 export const PROJECTS = [
   {
-    id: "1",
-    title: "6-DOF Robotic Arm",
-    subtitle: "High-precision manipulator for assembly tasks",
-    description: "Designed and prototyped a 6-degree-of-freedom robotic arm capable of 0.5mm repeatability. Utilized harmonic drives for compact joint actuation.",
-    thumbnail: "./assets/images/thumbnails/arm_thumb.jpg",
+    id: "centurion",
+    title: "Centurion Rocket",
+    subtitle: "High-Power Composite Rocket with J-Class Motor",
+    description: "A 130 cm high-power model rocket designed to explore structural behavior, propulsion integration, and thermal resistance at high thrust levels.",
+    thumbnail: "./assets/images/thumbnails/centurion_thumb.jpg",
     images: [
-      "./assets/images/thumbnails/arm_thumb.jpg",
-      "./assets/images/arm_render_iso.jpg",
-      "./assets/images/arm_prototype_detail.jpg"
+      "./assets/images/thumbnails/centurion_thumb.jpg",
+      "./assets/images/centurion_detail.jpg"
     ],
-    tags: ["SolidWorks", "Robotics", "Kinematics", "Python"],
-    date: "2023-11",
+    tags: ["Rocketry", "Composites", "Machining", "SolidWorks"],
+    date: "2024-01",
     role: "Lead Mechanical Engineer",
     details: {
-      challenge: "Achieving high torque density within a limited working envelope while maintaining structural rigidity.",
-      solution: "Implemented custom strain wave gearing and optimized link topology using FEA to reduce mass by 25% without compromising stiffness.",
-      result: "Successful prototype demonstration handling 5kg payloads with sub-millimeter precision."
+      challenge: "Safely integrate a J-class solid rocket motor and withstand elevated chamber pressure and thermal loads while minimizing mass.",
+      solution: "Constructed a primary airframe from cardboard tubing reinforced with fiberglass for high stiffness-to-weight ratio. Engineered a machined aluminum motor housing and hardened steel nozzle to handle peak thrust loads.",
+      result: "Validated composite reinforcement techniques on non-metallic airframes and achieved reliable thrust transfer with a modular, flight-ready system."
     },
     specs: {
-      "Payload": "5 kg",
-      "Reach": "850 mm",
-      "Weight": "12 kg",
-      "Material": "AL 7075-T6"
+      "Height": "130 cm",
+      "Motor": "J-Class Solid",
+      "Nozzle": "Hardened Steel",
+      "Structure": "Fiberglass/Cardboard"
     },
     assets: {
-      // INSTRUCTIONS:
-      // 1. Create a folder named 'assets' in your root directory.
-      // 2. Put your files there (e.g., assets/blueprints/drawing.pdf).
-      // 3. Update the 'url' below to point to that file.
-      blueprints: [
-        { title: "Arm Assembly View", url: "./assets/blueprints/assembly_view.pdf", type: "PDF", size: "2.4 MB" },
-        { title: "Joint 3 Detail", url: "./assets/blueprints/joint_3.pdf", type: "PDF", size: "1.1 MB" }
-      ],
       cad: [
-        { title: "Full Assembly STEP", url: "./assets/cad/arm_assembly.step", type: "STEP", size: "45 MB" },
-        { title: "Gripper End-Effector", url: "./assets/cad/gripper.stl", type: "STL", size: "5 MB" }
+        { title: "Motor Mount Assembly", url: "./assets/cad/centurion_motor_mount.step", type: "STEP", size: "15 MB" }
       ],
-      code: [
-        {
-          language: "python",
-          filename: "kinematics_solver.py",
-          description: "Inverse kinematics solver for 6-DOF positioning.",
-          snippet: `import numpy as np
-
-def inverse_kinematics(target_pose, link_lengths):
-    """
-    Calculates joint angles for a 6-DOF arm.
-    Args:
-        target_pose: 4x4 homogenous transformation matrix
-        link_lengths: list of link lengths [l1, l2, l3...]
-    Returns:
-        theta: list of joint angles [th1, th2, th3, th4, th5, th6]
-    """
-    x, y, z = target_pose[:3, 3]
-    
-    # Calculate Base Rotation (Theta 1)
-    theta1 = np.arctan2(y, x)
-    
-    # ... geometrical calculations ...
-    
-    return [theta1, theta2, theta3, theta4, theta5, theta6]`
-        }
+      blueprints: [
+         { title: "Airframe Dimensions", url: "./assets/blueprints/centurion_dims.pdf", type: "PDF", size: "1.2 MB" }
       ]
     }
   },
   {
-    id: "2",
-    title: "Drone Chassis Optimization",
-    subtitle: "Generative design for UAV structural integrity",
-    description: "Applied generative design principles to create a lightweight, high-strength quadcopter frame optimized for additive manufacturing.",
-    thumbnail: "./assets/images/thumbnails/drone_thumb.jpg",
+    id: "renegade",
+    title: "Renegade Rocket",
+    subtitle: "Fully Machined Aluminum Transonic Rocket",
+    description: "A 100 cm, high-performance rocket designed for stable flight approaching Mach 0.9. Features a fully machined aluminum airframe and modular subsystem design.",
+    thumbnail: "./assets/images/thumbnails/renegade_thumb.jpg",
     images: [
-      "./assets/images/thumbnails/drone_thumb.jpg",
-      "./assets/images/drone_stress_analysis.jpg"
+      "./assets/images/thumbnails/renegade_thumb.jpg",
+      "./assets/images/renegade_assembly.jpg"
     ],
-    tags: ["Fusion 360", "Generative Design", "3D Printing", "CFD"],
-    date: "2023-06",
+    tags: ["Aerospace", "CNC Machining", "Transonic", "Aluminum"],
+    date: "2023-08",
     role: "Design Engineer",
     details: {
-      challenge: "Minimizing airframe vibration and weight to extend flight time.",
-      solution: "Utilized modal analysis to identify resonance frequencies and generative design to place material only where needed for load paths.",
-      result: "30% weight reduction compared to traditional frame, increasing flight time by 4 minutes."
+      challenge: "Achieve stable flight approaching Mach 0.9 while integrating propulsion in a minimal-clearance aluminum airframe.",
+      solution: "Designed a monolithic aluminum body tube with machined fin slots and a modular 4-subsystem architecture. Fins were manufactured from wood reinforced with fiberglass and bonded to the machined slots.",
+      result: "Successful integration of modular subsystems and validation of tight-tolerance aluminum manufacturing for high-speed aerodynamics."
     },
     specs: {
-      "Weight": "240g",
-      "Material": "Carbon Fiber Nylon",
-      "Max Load": "250N",
-      "Mfg Process": "SLS Printing"
+      "Height": "100 cm",
+      "Top Speed": "Mach 0.9",
+      "Motor": "H300-Class",
+      "Material": "Aluminum 6061-T6"
     },
     assets: {
        cad: [
-        { title: "Optimized Frame", url: "./assets/cad/drone_frame_v2.iges", type: "IGES", size: "12 MB" }
+        { title: "Full Assembly", url: "./assets/cad/renegade_full.step", type: "STEP", size: "32 MB" }
       ]
     }
   },
   {
-    id: "3",
-    title: "Planetary Gearbox System",
-    subtitle: "High-reduction transmission for EV powertrain",
-    description: "Detailed design and simulation of a 2-stage planetary gearbox for a small electric vehicle application.",
-    thumbnail: "./assets/images/thumbnails/gearbox_thumb.jpg",
+    id: "heewing",
+    title: "HeeWing T1 Ranger VTOL",
+    subtitle: "Custom VTOL RC Aircraft with FPV",
+    description: "Transformation of a commercial airframe into a high-performance FPV and autonomous platform, integrating vertical takeoff capabilities with efficient fixed-wing flight.",
+    thumbnail: "./assets/images/thumbnails/heewing_thumb.jpg",
     images: [
-      "./assets/images/thumbnails/gearbox_thumb.jpg", 
-      "./assets/images/gearbox_exploded.jpg"
+      "./assets/images/thumbnails/heewing_thumb.jpg", 
+      "./assets/images/heewing_flight.jpg"
     ],
-    tags: ["ANSYS", "Gear Design", "Transmission", "Simulation"],
-    date: "2022-09",
-    role: "Mechanical Analyst",
+    tags: ["UAV", "VTOL", "Avionics", "FPV"],
+    date: "2023-05",
+    role: "Systems Integrator",
     details: {
-      challenge: "Managing thermal dissipation and contact stresses under peak load conditions.",
-      solution: "Optimized gear tooth profiles for contact ratio and integrated a passive oil splash lubrication system modeled in CFD.",
-      result: "Passed 1000-hour durability simulation with safety factor > 1.5."
+      challenge: "Integrating VTOL systems, long-range FPV, and autonomous navigation into a lightweight crash-resilient foam airframe.",
+      solution: "Reinforced EPP foam with carbon fiber spars. Integrated SpeedyBee F405 controller, DJI FPV system, and ELRS radio link. Optimized power distribution for VTOL transition loads.",
+      result: "Achieved a functional autonomous platform with digital FPV situational awareness and reliable VTOL transitions."
     },
     specs: {
-      "Ratio": "12:1",
-      "Max Torque": "150 Nm",
-      "Efficiency": "96%",
-      "Input Speed": "4000 RPM"
-    },
-    assets: {
-      blueprints: [
-         { title: "Gearbox Cross Section", url: "./assets/blueprints/gearbox_section.pdf", type: "PDF", size: "3.2 MB" },
-         { title: "BOM List", url: "./assets/blueprints/gearbox_BOM.pdf", type: "PDF", size: "0.5 MB" }
-      ]
-    }
-  },
-  {
-    id: "4",
-    title: "Automated conveyor rig",
-    subtitle: "Industrial automation setup",
-    description: "Modular conveyor system designed for rapid reconfiguration in a packaging facility.",
-    thumbnail: "./assets/images/thumbnails/conveyor_thumb.jpg",
-    images: ["./assets/images/thumbnails/conveyor_thumb.jpg"],
-    tags: ["Automation", "Pneumatics", "PLC", "CAD"],
-    date: "2022-02",
-    role: "Project Lead",
-    details: {
-      challenge: "Existing systems were too rigid and required days to reconfigure for different package sizes.",
-      solution: "Designed a modular aluminum profile system with quick-release pneumatic guides.",
-      result: "Changeover time reduced from 8 hours to 45 minutes."
+      "Frame": "EPP Foam + Carbon",
+      "Controller": "SpeedyBee F405",
+      "Link": "ExpressLRS / DJI FPV",
+      "Mode": "VTOL / Fixed-Wing"
     },
     assets: {
       code: [
          {
           language: "cpp",
-          filename: "plc_logic.cpp",
-          description: "Main loop for sorting logic.",
-          snippet: `void loop() {
-  if (sensorA.read() == HIGH) {
-    actuatorPush.extend();
-    delay(500);
-    actuatorPush.retract();
-  }
+          filename: "vtol_mix.cpp",
+          description: "Motor mixing logic for transition phase.",
+          snippet: `// Example mixer logic for VTOL transition
+if (mode == TRANSITION) {
+    float tilt = getTiltAngle();
+    front_motors.setPower(map(tilt, 0, 90, 100, 0));
+    rear_pusher.setPower(map(tilt, 0, 90, 0, 100));
+}`
+         }
+      ]
+    }
+  },
+  {
+    id: "robot",
+    title: "Two-Wheel Learning Robot",
+    subtitle: "Educational Robotics Platform",
+    description: "A self-balancing educational robot designed to introduce children to robotics, control systems, and programming concepts in a safe, engaging way.",
+    thumbnail: "./assets/images/thumbnails/robot_thumb.jpg",
+    images: ["./assets/images/thumbnails/robot_thumb.jpg"],
+    tags: ["Robotics", "Education", "Control Systems", "Embedded"],
+    date: "2022-11",
+    role: "Product Designer",
+    details: {
+      challenge: "Creating a robust, child-friendly platform that effectively simplifies complex control theory concepts for beginners.",
+      solution: "Designed a two-wheel differential drive system with low center of mass. Implemented a microcontroller-based feedback loop with simple interfaces for beginner programming.",
+      result: "Delivered a modular, impact-resistant educational tool that successfully demonstrates balance and kinematics logic."
+    },
+    specs: {
+      "Type": "Self-Balancing",
+      "Drive": "Differential",
+      "Target": "Education",
+      "Interface": "Microcontroller"
+    },
+    assets: {
+      code: [
+         {
+          language: "cpp",
+          filename: "balance_pid.cpp",
+          description: "PID loop for self-balancing.",
+          snippet: `void balance() {
+  error = setPoint - currentAngle;
+  integral += error * dt;
+  derivative = (error - prevError) / dt;
+  output = Kp * error + Ki * integral + Kd * derivative;
+  motors.write(output);
 }`
          }
       ]
@@ -174,6 +156,6 @@ def inverse_kinematics(target_pose, link_lengths):
 export const SKILLS = [
   { category: "CAD/CAM", items: ["SolidWorks", "Fusion 360", "AutoCAD", "Rhino"] },
   { category: "Simulation", items: ["ANSYS Workbench", "COMSOL", "Simulink", "CFD"] },
-  { category: "Prototyping", items: ["3D Printing (FDM/SLA)", "CNC Machining", "Laser Cutting"] },
-  { category: "Programming", items: ["Python (NumPy/Pandas)", "MATLAB", "C++ (Arduino)"] },
+  { category: "Prototyping", items: ["3D Printing (FDM/SLA)", "CNC Machining", "Laser Cutting", "Composites"] },
+  { category: "Programming", items: ["Python (NumPy/Pandas)", "MATLAB", "C++ (Arduino)", "G-Code"] },
 ];
