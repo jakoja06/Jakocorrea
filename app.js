@@ -254,27 +254,50 @@ function renderProjectDetail(id) {
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
+                <!-- Main Content -->
                 <div class="lg:col-span-2 space-y-12">
+                    <!-- 1. Objective -->
                     <section>
                         <h3 class="text-lg font-bold text-slate-100 mb-4 flex items-center">
-                            <span class="w-8 h-[1px] bg-primary mr-3"></span>The Challenge
+                            <span class="w-8 h-[1px] bg-primary mr-3"></span>Objective
                         </h3>
-                        <p class="text-slate-400 leading-relaxed text-lg">${project.details.challenge}</p>
+                        <p class="text-slate-400 leading-relaxed text-lg">${project.details.objective}</p>
                     </section>
+
+                    <!-- 2. Design -->
                     <section>
                         <h3 class="text-lg font-bold text-slate-100 mb-4 flex items-center">
-                            <span class="w-8 h-[1px] bg-primary mr-3"></span>Solution
+                            <span class="w-8 h-[1px] bg-primary mr-3"></span>Design
                         </h3>
-                        <p class="text-slate-400 leading-relaxed text-lg">${project.details.solution}</p>
+                        <p class="text-slate-400 leading-relaxed text-lg">${project.details.design}</p>
                     </section>
+
+                    <!-- 3. Manufacturing -->
                     <section>
                         <h3 class="text-lg font-bold text-slate-100 mb-4 flex items-center">
-                            <span class="w-8 h-[1px] bg-primary mr-3"></span>Result
+                            <span class="w-8 h-[1px] bg-primary mr-3"></span>Manufacturing
                         </h3>
-                        <p class="text-slate-400 leading-relaxed text-lg">${project.details.result}</p>
+                        <p class="text-slate-400 leading-relaxed text-lg">${project.details.manufacturing}</p>
+                    </section>
+
+                    <!-- 4. Systems -->
+                    <section>
+                        <h3 class="text-lg font-bold text-slate-100 mb-4 flex items-center">
+                            <span class="w-8 h-[1px] bg-primary mr-3"></span>Systems
+                        </h3>
+                        <p class="text-slate-400 leading-relaxed text-lg">${project.details.systems}</p>
+                    </section>
+
+                    <!-- 5. Outcomes -->
+                    <section>
+                        <h3 class="text-lg font-bold text-slate-100 mb-4 flex items-center">
+                            <span class="w-8 h-[1px] bg-primary mr-3"></span>Outcomes
+                        </h3>
+                        <p class="text-slate-400 leading-relaxed text-lg">${project.details.outcomes}</p>
                     </section>
                 </div>
 
+                <!-- Sidebar Specs -->
                 <div class="lg:col-span-1 space-y-8">
                     <div class="bg-slate-900/50 p-6 rounded-xl border border-slate-800">
                         <h4 class="font-mono text-xs font-bold text-slate-500 mb-4 uppercase tracking-wider">Specifications</h4>
