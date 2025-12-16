@@ -24,9 +24,11 @@ export const PROJECTS = [
     date: "2024-01",
     role: "Lead Mechanical Engineer",
     details: {
-      challenge: "Safely integrate a J-class solid rocket motor and withstand elevated chamber pressure and thermal loads while minimizing mass.",
-      solution: "Constructed a primary airframe from cardboard tubing reinforced with fiberglass for high stiffness-to-weight ratio. Engineered a machined aluminum motor housing and hardened steel nozzle to handle peak thrust loads.",
-      result: "Validated composite reinforcement techniques on non-metallic airframes and achieved reliable thrust transfer with a modular, flight-ready system."
+      objective: "Safely integrate a J-class solid rocket motor, achieve high structural stiffness while minimizing mass, and withstand elevated chamber pressure and nozzle thermal loads. Validate composite reinforcement techniques on non-metallic airframes.",
+      design: "The primary airframe is constructed from cardboard tubing reinforced with fiberglass, providing an excellent stiffness-to-weight ratio. Critical load paths near the propulsion system are reinforced using a machined aluminum motor housing for dimensional stability.",
+      manufacturing: "Fiberglass layup performed using wet-lay techniques. Aluminum motor mount precision-machined for concentric alignment. Steel nozzle hardened and fitted to ensure repeatable performance.",
+      systems: "Propulsion system mechanically isolated from the composite airframe. Structural interfaces designed to limit thermal propagation. Recovery system interface designed for future upgrades.",
+      outcomes: "Composite reinforcement dramatically improves cardboard airframe stiffness. Metal-composite interfaces require careful stress and thermal management. Nozzle material selection has a direct impact on performance repeatability."
     },
     specs: {
       "Height": "130 cm",
@@ -57,9 +59,11 @@ export const PROJECTS = [
     date: "2023-08",
     role: "Design Engineer",
     details: {
-      challenge: "Achieve stable flight approaching Mach 0.9 while integrating propulsion in a minimal-clearance aluminum airframe.",
-      solution: "Designed a monolithic aluminum body tube with machined fin slots and a modular 4-subsystem architecture. Fins were manufactured from wood reinforced with fiberglass and bonded to the machined slots.",
-      result: "Successful integration of modular subsystems and validation of tight-tolerance aluminum manufacturing for high-speed aerodynamics."
+      objective: "Achieve stable flight approaching Mach 0.9, integrate propulsion in a minimal-clearance aluminum airframe, and design a fully modular architecture for propulsion, avionics, and recovery.",
+      design: "Monolithic aluminum body tube with machined fin slots optimized for axial stiffness. Fins are manufactured from wood reinforced with fiberglass. The rocket is divided into four primary subsystems: Propulsion, Airframe, Fin System, and Recovery.",
+      manufacturing: "CNC milling of aluminum components with tight tolerance control to prevent interference. Fins surface-mounted and bonded to machined slots. Structural analysis focused on axial load paths and fin root stresses.",
+      systems: "Dedicated electronics bay isolated from propulsion loads. Designed to house altimeters, flight computers, and power systems with structural provisions for telemetry.",
+      outcomes: "Aluminum airframes demand careful thermal and vibration management. Fin attachment becomes critical when internal motor clearance is minimal. Modular design significantly improves testability and safety."
     },
     specs: {
       "Height": "100 cm",
@@ -87,9 +91,11 @@ export const PROJECTS = [
     date: "2023-05",
     role: "Systems Integrator",
     details: {
-      challenge: "Integrating VTOL systems, long-range FPV, and autonomous navigation into a lightweight crash-resilient foam airframe.",
-      solution: "Reinforced EPP foam with carbon fiber spars. Integrated SpeedyBee F405 controller, DJI FPV system, and ELRS radio link. Optimized power distribution for VTOL transition loads.",
-      result: "Achieved a functional autonomous platform with digital FPV situational awareness and reliable VTOL transitions."
+      objective: "Integrate VTOL and fixed-wing flight modes, support long-range FPV operations, enable autonomous navigation and mission planning, and maintain a lightweight crash-resilient structure.",
+      design: "EPP foam airframe for impact resistance reinforced with carbon fiber spars for stiffness. Structural modifications implemented to support additional electronics and wiring.",
+      manufacturing: "Customized commercial airframe. Integrated mounts for motors and servos ensuring aerodynamic efficiency.",
+      systems: "SpeedyBee F405 Wing Flight Controller, DJI FPV Air Unit, ExpressLRS Radio Link, and GPS. Power distribution optimized for VTOL transition loads. EMI management between FPV and GPS components.",
+      outcomes: "VTOL systems require careful tuning of transition logic. Digital FPV significantly improves situational awareness. Structural reinforcement is critical when mixing foam and carbon fiber."
     },
     specs: {
       "Frame": "EPP Foam + Carbon",
@@ -124,9 +130,11 @@ if (mode == TRANSITION) {
     date: "2022-11",
     role: "Product Designer",
     details: {
-      challenge: "Creating a robust, child-friendly platform that effectively simplifies complex control theory concepts for beginners.",
-      solution: "Designed a two-wheel differential drive system with low center of mass. Implemented a microcontroller-based feedback loop with simple interfaces for beginner programming.",
-      result: "Delivered a modular, impact-resistant educational tool that successfully demonstrates balance and kinematics logic."
+      objective: "Create a safe and engaging learning platform to introduce basic control theory concepts. Use robust, child-friendly materials and enable modular expansion for future lessons.",
+      design: "Two-wheel differential drive configuration with a low center of mass for improved stability. Protective housing included to shield electronics and moving parts from handling.",
+      manufacturing: "Modular assembly designed for easy repair and modification. Standardized fasteners and durable chassis materials.",
+      systems: "Microcontroller-based control system with sensors for balance and motion feedback. Simple interfaces designed for beginner programming.",
+      outcomes: "Educational design requires balancing robustness and simplicity. Mechanical layout strongly influences control difficulty. Modular systems improve long-term usability."
     },
     specs: {
       "Type": "Self-Balancing",
