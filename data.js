@@ -1,11 +1,11 @@
 export const SITE_CONFIG = {
-  name: "Jacobo Correa ",
-  title: "Mechanical Engineer Student",
-  description: "Specializing in robotics, FEAh analysis, and precision mechanism design. Transforming complex problems into elegant mechanical solutions.",
+  name: "Jacobo Correa",
+  title: "Mechanical Engineering Student",
+  description: "Specializing in robotics, FEA analysis, and precision mechanism design. Transforming complex problems into elegant mechanical solutions.",
   social: {
     github: "https://github.com",
     linkedin: "https://linkedin.com",
-    email: "mailto: jakocorrea@icloud.com"
+    email: "mailto:jacobo@example.com"
   }
 };
 
@@ -15,11 +15,11 @@ export const PROJECTS = [
     title: "6-DOF Robotic Arm",
     subtitle: "High-precision manipulator for assembly tasks",
     description: "Designed and prototyped a 6-degree-of-freedom robotic arm capable of 0.5mm repeatability. Utilized harmonic drives for compact joint actuation.",
-    thumbnail: "https://picsum.photos/id/1/800/600",
+    thumbnail: "./assets/images/thumbnails/arm_thumb.jpg",
     images: [
-      "https://picsum.photos/id/1/800/600",
-      "https://picsum.photos/id/532/800/600",
-      "https://picsum.photos/id/2/800/600"
+      "./assets/images/thumbnails/arm_thumb.jpg",
+      "./assets/images/arm_render_iso.jpg",
+      "./assets/images/arm_prototype_detail.jpg"
     ],
     tags: ["SolidWorks", "Robotics", "Kinematics", "Python"],
     date: "2023-11",
@@ -81,8 +81,11 @@ def inverse_kinematics(target_pose, link_lengths):
     title: "Drone Chassis Optimization",
     subtitle: "Generative design for UAV structural integrity",
     description: "Applied generative design principles to create a lightweight, high-strength quadcopter frame optimized for additive manufacturing.",
-    thumbnail: "https://picsum.photos/id/119/800/600",
-    images: ["https://picsum.photos/id/119/800/600", "https://picsum.photos/id/120/800/600"],
+    thumbnail: "./assets/images/thumbnails/drone_thumb.jpg",
+    images: [
+      "./assets/images/thumbnails/drone_thumb.jpg",
+      "./assets/images/drone_stress_analysis.jpg"
+    ],
     tags: ["Fusion 360", "Generative Design", "3D Printing", "CFD"],
     date: "2023-06",
     role: "Design Engineer",
@@ -108,8 +111,11 @@ def inverse_kinematics(target_pose, link_lengths):
     title: "Planetary Gearbox System",
     subtitle: "High-reduction transmission for EV powertrain",
     description: "Detailed design and simulation of a 2-stage planetary gearbox for a small electric vehicle application.",
-    thumbnail: "https://picsum.photos/id/250/800/600",
-    images: ["https://picsum.photos/id/250/800/600", "https://picsum.photos/id/251/800/600"],
+    thumbnail: "./assets/images/thumbnails/gearbox_thumb.jpg",
+    images: [
+      "./assets/images/thumbnails/gearbox_thumb.jpg", 
+      "./assets/images/gearbox_exploded.jpg"
+    ],
     tags: ["ANSYS", "Gear Design", "Transmission", "Simulation"],
     date: "2022-09",
     role: "Mechanical Analyst",
@@ -136,8 +142,8 @@ def inverse_kinematics(target_pose, link_lengths):
     title: "Automated conveyor rig",
     subtitle: "Industrial automation setup",
     description: "Modular conveyor system designed for rapid reconfiguration in a packaging facility.",
-    thumbnail: "https://picsum.photos/id/305/800/600",
-    images: ["https://picsum.photos/id/305/800/600"],
+    thumbnail: "./assets/images/thumbnails/conveyor_thumb.jpg",
+    images: ["./assets/images/thumbnails/conveyor_thumb.jpg"],
     tags: ["Automation", "Pneumatics", "PLC", "CAD"],
     date: "2022-02",
     role: "Project Lead",
